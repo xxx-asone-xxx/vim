@@ -87,11 +87,14 @@ filetype off
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim
-    call neobundle#rc(expand('~/.vim/bundle/'))
+    
+    call neobundle#begin(expand('~/.vim/bundle/'))
+    NeoBundle 'Shougo/neobundle.vim'
+    call neobundle#end()
+"    call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
 "originalrepos on github
-NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
@@ -104,8 +107,8 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
 
-NeoBundle 'git://github.com/mattn/zencoding-vim.git'
-NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'git://github.com/mattn/emmet-vim.git'
+NeoBundle 'mattn/emmet-vim'
 
 "NeoBundle 'https://bitbucket.org/kovisoft/slimv'
 filetype plugin indent on     " required!
@@ -176,7 +179,6 @@ if !exists('g:neocomplcache_omni_patterns')
 endif
 
 let g:neocomplcache_omni_patterns.ruby='[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php='[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c='\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp='\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
